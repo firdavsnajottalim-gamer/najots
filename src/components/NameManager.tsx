@@ -10,7 +10,6 @@ interface NameManagerProps {
   onClear: () => void;
   accentColor: string;
   category: string;
-  teacherName: string;
 }
 
 export const NameManager: React.FC<NameManagerProps> = ({
@@ -19,8 +18,7 @@ export const NameManager: React.FC<NameManagerProps> = ({
   onRemove,
   onClear,
   accentColor,
-  category,
-  teacherName
+  category
 }) => {
   const [inputValue, setInputValue] = useState('');
 
@@ -43,7 +41,7 @@ export const NameManager: React.FC<NameManagerProps> = ({
             <h3 className="text-2xl font-black uppercase tracking-tighter" style={{ color: accentColor }}>
               {category}
             </h3>
-            <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">{teacherName} ustoz</p>
+            <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">A'zolar ro'yxati</p>
           </div>
         </div>
         <span className="bg-gray-900 text-gray-400 px-4 py-1.5 rounded-full text-sm font-black border border-white/5">

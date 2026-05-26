@@ -11,7 +11,6 @@ type Category = 'junior' | 'senior' | 'master';
 interface CategoryData {
   id: Category;
   label: string;
-  teacher: string;
   icon: React.ReactNode;
   bg: string;
   accent: string;
@@ -22,29 +21,26 @@ const CATEGORIES: CategoryData[] = [
   { 
     id: 'master', 
     label: 'Master', 
-    teacher: 'Muslima',
     icon: <Award className="w-6 h-6" />, 
     bg: '#0a0505', 
     accent: '#EF4444', // Red
-    description: 'Eng tajribali MASTER guruh - Muslima ustoz!'
+    description: 'Eng tajribali MASTER guruh qahramonlari!'
   },
   { 
     id: 'senior', 
     label: 'Senior', 
-    teacher: 'Marhabo',
     icon: <GraduationCap className="w-6 h-6" />, 
     bg: '#050a05', 
     accent: '#22C55E', // Green
-    description: 'Katta SENIOR guruh - Marhabo ustoz!'
+    description: 'Katta SENIOR guruh qahramonlari!'
   },
   { 
     id: 'junior', 
     label: 'Junior', 
-    teacher: 'Iroda',
     icon: <Star className="w-6 h-6" />, 
     bg: '#05070a', 
     accent: '#3B82F6', // Blue
-    description: 'Kichik JUNIOR guruh - Iroda ustoz!'
+    description: 'Kichik JUNIOR guruh qahramonlari!'
   },
 ];
 
@@ -167,21 +163,12 @@ export default function App() {
                 </div>
                 <div className="flex flex-col items-start leading-tight">
                   <span className="text-xl font-black">{cat.label}</span>
-                  <span className="text-xs opacity-70 uppercase tracking-widest font-mono font-bold">{cat.teacher}</span>
                 </div>
               </button>
             ))}
           </div>
 
-          <motion.p
-            key={activeTab}
-            initial={{ opacity: 0, y: 5 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-xl font-bold tracking-wide italic opacity-80"
-            style={{ color: activeCategory.accent }}
-          >
-            {activeCategory.description}
-          </motion.p>
+
         </header>
 
         {/* Main Content */}
@@ -218,7 +205,6 @@ export default function App() {
               onClear={handleClearNames}
               accentColor={activeCategory.accent}
               category={activeCategory.label}
-              teacherName={activeCategory.teacher}
             />
           </div>
         </div>
